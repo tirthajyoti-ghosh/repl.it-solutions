@@ -1,10 +1,14 @@
 def leftmost_nodes_sum(array)
-  left_index = (0...array.length).map { |i| 2*i+1 if (2*i+1) < array.length-1 }.reject(&:nil?)
-  
+  left_node = 0
+
   sum = 0
-  left_index.each { |i| sum += array[i] }
-  
-  sum + array[0]
+
+  until array[left_node].nil?
+    sum += array[left_node]
+    left_node = 2 * left_node + 1  
+  end
+
+  sum
 end
 
-puts leftmost_nodes_sum([2, 7, 5, 2, 6, 0, 9])
+p leftmost_nodes_sum([5, 3, 4, 11, 13, 15, 21, 10, 4, 7, 2, 8, 0, 9, 0])
