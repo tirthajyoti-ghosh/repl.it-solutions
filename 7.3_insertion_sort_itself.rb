@@ -3,7 +3,7 @@ def sort_itself(array)
   	current = array[i]
   	hole = i
   	
-  	while(hole > 0 && array[hole -1 ] > current)
+  	while(hole > 0 && array[hole - 1] > current)
   		array[hole] = array[hole - 1]
   		hole -= 1
   	end
